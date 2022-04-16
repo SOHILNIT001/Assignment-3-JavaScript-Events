@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Map ex 2</title>
+		<script>
+			function loadData(){	
+		
+			const states = new Map([['Tamil nadu',{capital:'chennai',population:200000}],
+								['Maharastra',{capital:'Mumbai',population:500000}],
+								['Karnataka',{capital:'Bengaluru',population:700000}],
+								['Telangana',{capital:'Hyderabad',population:17000000}],
+								['Punjab',{capital:'chandigarh',population:8000000}],
+								['Kerela',{capital:'Trivandrum',population:300000}]	
+								]);
+	
+			console.log("---------------------------------------------\n");
+			
+			let aaKeys = Array.from(states.keys());
+			console.log("aaKeys "+aaKeys);
+			
+			 let shtml = `<table border="1px"><th>Name</th><th>Details</th>`
+				states.forEach((value, key) => {
+				  shtml += `<tr><td rowspan= "2"> ${key} </td><td>  ${value.capital} </td></tr><tr><td>  ${value.population} </td></tr>`
+				});
+				shtml += `</table>`;
+			document.write(shtml);
+								
+			console.log("---------------------------------------------\n");
+			}
+			
+		</script>
+	</head>
+<body onload="loadData()">
+	<div id="priHtm"></div>
+</body>
+</html>
