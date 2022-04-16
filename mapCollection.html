@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Map ex 2</title>
+		<script>
+			function loadData(){	
+		
+			const states = new Map([['Tamil nadu','chennai'],['Maharastra','Mumbai'],['Karnataka','Bengaluru']]);
+			states.set('Telangana','Hyderabad');
+			states.set('Punjab','chandigarh');
+			states.set('Kerela','Trivandrum');
+			
+			
+			console.log("---------------------------------------------\n");
+			
+			let aaKeys = Array.from(states.keys());
+			console.log("aaKeys "+aaKeys);
+			
+			let shtml = `<table border="1px"><th>Name</th><th>Details</th>
+									${aaKeys.map(key => { return `<tr><td>${key}</td><td>${states.get(key)}</td></tr>`; } ).join('\n')}
+						</table>`;
+			
+			document.write(shtml);
+			
+			console.log("---------------------------------------------\n");
+			}
+			
+		</script>
+	</head>
+<body onload="loadData()">
+	<div id="priHtm"></div>
+</body>
+</html>
